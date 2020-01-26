@@ -1,5 +1,5 @@
 # Integer Discrete Flow for Audio Compression in Tensorflow2
-[License Badge]()
+[License Badge](https://img.shields.io/github/license/vatj/waveglow-craystack?style=plastic)
 Implementation of a Integer Discrete Flow to perform lossless audio compression using Tensorflow 2.0. The flow model is adapted from PyTorch implementations of [Nvidia WaveGlow model by Prender et al.](https://arxiv.org/abs/1811.00002) and [Integer Discrete Flow by Hoogeboom et al.](https://arxiv.org/abs/1905.07376). The neural net takes the audio signal as input and map it on a pair (signal, parameters) whose parameters encode a hierarchical mixture of logistic distributions. Given the parameters, the mapped signal can be encoded efficiently using entropy coding, here range Asymmetric Numeral Systems. The encoder implementation is from [Craystack](https://openreview.net/forum?id=r1lZgyBYwS).
 
 Note that because of the hierarchical structure, an approximation of the full audio file can be obtained with increasing precision for each block of the data recovered. Examples coming soon.
@@ -17,7 +17,7 @@ Disclaimer : Encoding/Decoding time and memory requirement is currently unpracti
 ## Loss, compression ratio and bit_per_dimension plots for the small model
 
 
-### COmpression Ratio
+### Compression Ratio
 ![Compression ration](/assets/compression_ratio.svg)
 
 ### Bits per dimension
@@ -50,22 +50,22 @@ Use tensorboard to monitor training.
 
 ## Content
 
-All python code exist in the notebooks directory.
-The scripts directory contains a python script version of all notebooks.
-The submodules directory contains the craystack implementation of the entropy coder
-The assets directory contains a few images from tensorboard
+- All python code exist in the notebooks directory.
+- The scripts directory contains a python script version of all notebooks.
+- The submodules directory contains the craystack implementation of the entropy coder
+- The assets directory contains a few images from tensorboard
 
 Specific part of the code :
-The neural net model can be found in waveglow_model_integer
-The custom layers can be found in custom_layers_integer
-The main training notebook is training_integer
-The interface with craystack can be found in waveglow_codec
-The data pipeline is found in raw_ljspeech_to_tfrecords
-All parameters are taken from the hparams.py
-Trainig_utils contains useful code snippets
+- The neural net model can be found in waveglow_model_integer
+- The custom layers can be found in custom_layers_integer
+- The main training notebook is training_integer
+- The interface with craystack can be found in waveglow_codec
+- The data pipeline is found in raw_ljspeech_to_tfrecords
+- All parameters are taken from the hparams.py (NOT from the notebook)
+- Trainig_utils contains useful code snippets
 
 
 ## TODOS
 
 - [ ] Add signal reconstruction examples
-- [ ] Add results large/medium model
+- [ ] Add results flac
