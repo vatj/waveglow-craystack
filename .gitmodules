@@ -1,0 +1,3 @@
+[submodule "submodules/craystack"]
+	path = submodules/craystack
+	url = https://github.com/vatj/craystack.git
