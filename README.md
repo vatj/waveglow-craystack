@@ -1,5 +1,5 @@
 # Integer Discrete Flow for Audio Compression in Tensorflow2
-[![License: MIT](https://img.shields.io/github/license/vatj/waveglow-craystack?style=plastic)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/vatj/waveglow-craystack)](https://opensource.org/licenses/MIT)
 Implementation of a Integer Discrete Flow to perform lossless audio compression using Tensorflow 2.0. The flow model is adapted from PyTorch implementations of [Nvidia WaveGlow model by Prender et al.](https://arxiv.org/abs/1811.00002) and [Integer Discrete Flow by Hoogeboom et al.](https://arxiv.org/abs/1905.07376). The neural net takes the audio signal as input and map it on a pair (signal, parameters) whose parameters encode a hierarchical mixture of logistic distributions. Given the parameters, the mapped signal can be encoded efficiently using entropy coding, here range Asymmetric Numeral Systems. The encoder implementation is from [Craystack](https://openreview.net/forum?id=r1lZgyBYwS).
 
 Note that because of the hierarchical structure, an approximation of the full audio file can be obtained with increasing precision for each block of the data recovered. Examples coming soon.
