@@ -16,13 +16,17 @@ Disclaimer : Encoding/Decoding time and memory requirement is currently unpracti
 
 ## Loss, compression ratio and bit_per_dimension plots for the small model
 
-![Loss Plot](/assets/total_loss.svg)
 
+### COmpression Ratio
 ![Compression ration](/assets/compression_ratio.svg)
 
-![Bits per dimension](/assets/bits_per_dimension.svg)
+### Bits per dimension
+![Bits per dimension](/assets/bits_per_dim.svg)
 
-Note that the discontinuity is due to increasing the sharpness of the logistic distribution in the last layer during training and not to instability. Instability were observed for similar hyperparameters but different random seed suggesting the permutation in the convolutional layers play an important role in the stability of the model. More investigation needed
+### Total Loss
+![Loss Plot](/assets/total_loss.svg)
+
+Note that the discontinuity is due to increasing the hyperparameter associated with sharpness of the logistic distribution in the last layer during training and not to instability. Instability were observed for similar hyperparameters but different random seed suggesting the permutation in the convolutional layers play an important role in the stability of the model.
 
 ## Quickstart
 
